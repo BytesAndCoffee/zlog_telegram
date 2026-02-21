@@ -29,14 +29,14 @@ class Chat:
 inactive = Chat('', '')
 
 
-class Telepush:
+class ZlogTelegram:
     def __init__(self, token: str, chat_id: str, offset: int):
         self.token: str = token
         self.chat_id: str = chat_id
         self.chats: Dict[Tuple[str, str], Chat] = {}
         self._active: Tuple[str, str] = ('', '')
         self.offset: int = offset
-        logging.basicConfig(filename='/home/znc/Telepush/telepush.log', level=logging.ERROR)
+        logging.basicConfig(filename='/home/znc/zlog_telegram/zlog_telegram.log', level=logging.ERROR)
 
     @property
     def active(self) -> Tuple[str, str]:
