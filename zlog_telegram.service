@@ -1,0 +1,15 @@
+[Unit]
+Description=Zlog Telegram bridge
+After=network.target
+StartLimitIntervalSec=1
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+User=znc
+WorkingDirectory=/home/znc/zlog_telegram
+ExecStart=/home/znc/zlog_telegram/venv/bin/python /home/znc/zlog_telegram/zlog_bridge.py
+
+[Install]
+WantedBy=multi-user.target
