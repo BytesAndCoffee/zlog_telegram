@@ -82,7 +82,6 @@ class ZlogTelegram:
 
     def fetch(self):
         url = f'https://api.telegram.org/bot{self.token}/getUpdates?offset={self.offset}'
-        print(url)
         resp = requests.get(url)
         if not resp.ok:
             logging.error(f"HTTP Error {resp.status_code}: {resp.text}")
